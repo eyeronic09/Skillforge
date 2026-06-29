@@ -17,7 +17,10 @@ data class CourseDto(
     val language: String,
     val lastUpdated: String,
     val tags: List<String>,
+    @SerialName("instructor")
     val instructorDto: InstructorDto,
-    val descriptionDto: DescrpitionDto,
+    @SerialName("description")
+    val description: String,
+    @SerialName("lessons")
     val lessonDto: List<LessonDto>
 )
