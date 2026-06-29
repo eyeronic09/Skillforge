@@ -9,9 +9,13 @@ import io.ktor.client.statement.HttpResponse
 import io.ktor.client.statement.bodyAsText
 
 class CourseApiImpl(private val ktorClient : HttpClient) : CourseApi {
+    private val baseUrl = "https://raw.githubusercontent.com/android-assesment/notes/refs/heads/main/"
     override suspend fun getCourses(): ResponseDto {
-        val response: HttpResponse = ktorClient.get("data.json")
-        Log.d("CourseApiImpl", "Response Body: ${response.bodyAsText()}")
-        return response.body()
+        return try {
+            val response = ktorClient.get(urlString = "$baseUrl/data.json")
+            response.body()
+        } catch (e: Exception){
+            throw e
+        }
     }
 }

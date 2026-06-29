@@ -1,8 +1,10 @@
 package com.eyeronic09.skillforge.Core.di
 
 import android.app.Application
+import com.eyeronic09.skillforge.HomeScreen.data.remote.ReposistoryImpl.CourseReposistoryImpl
 import com.eyeronic09.skillforge.HomeScreen.data.remote.api.CourseApi
 import com.eyeronic09.skillforge.HomeScreen.data.remote.api.CourseApiImpl
+import com.eyeronic09.skillforge.HomeScreen.domain.Reposistory.CourseRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -22,5 +24,6 @@ class MyApp : Application(){
     val appModule = module {
         single { NetworkClient.httpClient }
         single <CourseApi>{ CourseApiImpl(get()) }
+        single <CourseRepository>{ CourseReposistoryImpl(get()) }
     }
 }

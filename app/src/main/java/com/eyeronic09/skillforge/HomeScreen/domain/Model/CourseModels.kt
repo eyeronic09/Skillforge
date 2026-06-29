@@ -44,6 +44,7 @@ data class Lesson(
 )
 
 sealed class CourseError {
+
     data object Unauthorized : CourseError()
     data object NotFound : CourseError()
     data object Server : CourseError()
