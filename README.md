@@ -28,17 +28,13 @@ and displays categories, courses, lessons, and a video player interface.
 ### AI Tools Used
 
 -   ChatGPT
--   GitHub Copilot
+-   Gemini
 
 ### Example Prompts
+what casue the api call always returning unknow
+what best whay to use nested lazy row and column
 
-1.  "How should I structure a Jetpack Compose MVVM project using
-    Repository and Use Cases?"
 
-2.  "Create a reusable Compose CourseCard similar to this UI."
-
-3.  "Explain why ExoPlayer throws 'Player is accessed on the wrong
-    thread' and how to fix it."
 
 ### What AI Got Right
 
@@ -47,11 +43,7 @@ architecture improvements, and explained coroutine usage, which sped up
 development.
 
 ### What AI Got Wrong
-
-AI initially suggested calling ExoPlayer methods from a background
-dispatcher, which caused:
-
-`IllegalStateException: Player is accessed on the wrong thread.`
+nothing
 
 I corrected the implementation by ensuring all ExoPlayer operations were
 executed on the Main dispatcher while keeping database and network work
