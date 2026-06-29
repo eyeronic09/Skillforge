@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.transitions.SlideTransition
+import com.eyeronic09.skillforge.HomeScreen.ui.HomeScreen
 import com.eyeronic09.skillforge.ui.theme.SkillforgeTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,38 +23,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SkillforgeTheme {
-                Navigator(MainHomeScreen()) { navigator ->
+                Navigator(screen = HomeScreen) { navigator ->
                     SlideTransition(navigator)
                 }
             }
         }
-    }
-}
-
-class MainHomeScreen : Screen {
-    @Composable
-    override fun Content() {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            Greeting(
-                name = "Voyager",
-                modifier = Modifier.padding(innerPadding)
-            )
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SkillforgeTheme {
-        Greeting("Android")
     }
 }

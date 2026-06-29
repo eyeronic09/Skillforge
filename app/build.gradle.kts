@@ -6,16 +6,12 @@ plugins {
 
 android {
     namespace = "com.eyeronic09.skillforge"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.eyeronic09.skillforge"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -50,6 +46,8 @@ dependencies {
     implementation(libs.voyager.navigator)
     implementation(libs.voyager.screenmodel)
     implementation(libs.voyager.transitions)
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.material.icons.extended)
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.ktor.client.content.negotiation)

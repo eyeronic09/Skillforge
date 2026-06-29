@@ -49,6 +49,6 @@ sealed class CourseError {
     data object NotFound : CourseError()
     data object Server : CourseError()
     data object Network : CourseError()
-    data object Unknown : CourseError()
+    data class Unknown(val message: String) : CourseError()
 
 }

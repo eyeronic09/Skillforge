@@ -12,6 +12,7 @@ voyager = "1.1.0-beta02"
 ktor = "3.0.3"
 kotlinxSerialization = "1.7.3"
 koin = "4.2.2"
+coil = "2.6.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,6 +41,8 @@ ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serializatio
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

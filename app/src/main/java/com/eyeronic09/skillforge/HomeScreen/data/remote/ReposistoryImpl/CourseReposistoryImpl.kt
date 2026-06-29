@@ -1,5 +1,6 @@
 package com.eyeronic09.skillforge.HomeScreen.data.remote.ReposistoryImpl
 
+import android.util.Log
 import com.eyeronic09.skillforge.HomeScreen.data.remote.api.CourseApi
 import com.eyeronic09.skillforge.HomeScreen.data.remote.mapper.NetworkResult
 import com.eyeronic09.skillforge.HomeScreen.data.remote.mapper.errorMapeper
@@ -17,6 +18,7 @@ class CourseReposistoryImpl(
             val category = response.categories.map { it.toDomain() }
             NetworkResult.Success(category)
         }catch (e : Exception) {
+            Log.e("CourseRepository", "Error getting courses", e)
             NetworkResult.Error(errorMessage = errorMapeper(e))
         }
     }
